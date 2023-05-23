@@ -1,0 +1,63 @@
+{
+  "name": "cms-video",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --mode production",
+    "build:dev": "tsc && vite build --mode development",
+    "build:test": "tsc && vite build --mode test",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./",
+    "lint:style": "stylelint \"./**/*.{css,scss}\" --fix",
+    "format": "prettier --write \"./**/*.{html,tsx,ts,js,json,md}\"",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "antd": "^5.4.0",
+    "axios": "^1.3.4",
+    "dayjs": "^1.11.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "resso": "^0.14.0",
+    "sass": "^1.60.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "stylelint": "^15.4.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-config-standard": "^32.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^4.6.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-mkcert": "^1.14.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,tsx,ts}": [
+      "npm run lint"
+    ],
+    "*.{scss,sass}": [
+      "npm run lint:style"
+    ],
+    "*.{js,jsx,tsx,ts,css}": [
+      "npm run format"
+    ]
+  }
+}
